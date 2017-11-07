@@ -69,8 +69,6 @@ def run(length, width, height, fps, level):
 
   env.reset()
 
-  # Starts the random spring agent. As a simpler alternative, we could also
-  # use DiscretizedRandomAgent().
   agent = MyAgent(env.action_spec())
 
   reward = 0
@@ -79,7 +77,6 @@ def run(length, width, height, fps, level):
     if not env.is_running():
       print('Environment stopped early')
       env.reset()
-      # agent.reset()
     obs = env.observations()
     action = agent.step(reward, obs['RGB_INTERLACED'])
     reward = env.step(action, num_steps=1)
@@ -99,7 +96,7 @@ if __name__ == '__main__':
                       help='Number of frames per second')
   parser.add_argument('--runfiles_path', type=str, default=None,
                       help='Set the runfiles path to find DeepMind Lab data')
-  parser.add_argument('--level_script', type=str, default='nav_maze_random_goal_03',
+  parser.add_argument('--level_script', type=str, default='my_maze',
                       help='The environment level script to load')
 
   args = parser.parse_args()
