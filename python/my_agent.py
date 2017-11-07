@@ -33,6 +33,10 @@ def _action(*entries):
 class MyAgent(object):
   """Simple agent for DeepMind Lab."""
 
+  def __init__(self, action_spec):
+    self.action_spec = action_spec
+    print('Starting MyAgent. Action spec:', action_spec)
+
   ACTIONS = {
       'look_left': _action(-20, 0, 0, 0, 0, 0, 0),
       'look_right': _action(20, 0, 0, 0, 0, 0, 0),
@@ -75,7 +79,7 @@ def run(length, width, height, fps, level):
     if not env.is_running():
       print('Environment stopped early')
       env.reset()
-      agent.reset()
+      # agent.reset()
     obs = env.observations()
     action = agent.step(reward, obs['RGB_INTERLACED'])
     reward = env.step(action, num_steps=1)
