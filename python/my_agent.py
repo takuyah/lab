@@ -51,7 +51,7 @@ class MyAgent(object):
 
   def step(self, unused_reward, unused_image):
     """Gets an image state and a reward, returns an action."""
-    return ACTIONS['forward']
+    return MyAgent.ACTIONS['forward']
 
 def run(length, width, height, fps, level):
   """Spins up an environment and runs the random agent."""
