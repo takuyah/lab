@@ -84,8 +84,7 @@ def run(length, width, height, fps, level):
     action = agent.step(reward, obs['RGB_INTERLACED'])
     reward = env.step(action, num_steps=1)
 
-  print('Finished after %i steps. Total reward received is %f'
-        % (length, agent.rewards))
+  print('Finished after %i steps' % (length))
 
 
 if __name__ == '__main__':
