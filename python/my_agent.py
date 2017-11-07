@@ -91,9 +91,9 @@ if __name__ == '__main__':
   parser = argparse.ArgumentParser(description=__doc__)
   parser.add_argument('--length', type=int, default=1000,
                       help='Number of steps to run the agent')
-  parser.add_argument('--width', type=int, default=80,
+  parser.add_argument('--width', type=int, default=640,
                       help='Horizontal size of the observations')
-  parser.add_argument('--height', type=int, default=80,
+  parser.add_argument('--height', type=int, default=480,
                       help='Vertical size of the observations')
   parser.add_argument('--fps', type=int, default=60,
                       help='Number of frames per second')
